@@ -1,1 +1,1 @@
-cmd: python app.py
+cmd: bin/qgtunnel python database.py
