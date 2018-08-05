@@ -1,1 +1,1 @@
-cmd: bin/qgtunnel python database.py
+web: bin/qgtunnel python database.py
