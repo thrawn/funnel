@@ -1,30 +1,18 @@
-#!/usr/bin/python
 import psycopg2
-import sys
-import pprint
- 
-def main():
-	conn_string = "host='localhost' dbname='postgres' user='postgres' password='DB_PASSWORD'"
-	# print the connection string we will use to connect
-	print "Connecting to database\n	->%s" % (conn_string)
- 
-	# get a connection, if a connect cannot be made an exception will be raised here
-	conn = psycopg2.connect(conn_string)
- 
-	# conn.cursor will return a cursor object, you can use this cursor to perform queries
-	cursor = conn.cursor()
- 
-	# execute our Query
-	cursor.execute("SELECT 1+1 as test1")
- 
-	# retrieve the records from the database
-	records = cursor.fetchall()
- 
-	# print out the records using pretty print
-	# note that the NAMES of the columns are not shown, instead just indexes.
-	# for most people this isn't very useful so we'll show you how to return
-	# columns as a dictionary (hash) in the next example.
-	pprint.pprint(records)
- 
-if __name__ == "__main__":
-	main()
+
+try:
+    connect_str = "dbname='postgres' user='postgres' host='localhost' " + \
+                  "password='DB_PASSWORD'"
+    # use our connection values to establish a connection
+    conn = psycopg2.connect(connect_str)
+    # create a psycopg2 cursor that can execute queries
+    cursor = conn.cursor()
+    # create a new table with a single column called "name"
+    #cursor.execute("""CREATE TABLE tutorials (name char(40));""")
+    # run a SELECT statement - no data in there, but we can try it
+    cursor.execute("""SELECT 1+1 as test1""")
+    rows = cursor.fetchall()
+    print(rows)
+except Exception as e:
+    print("Uh oh, can't connect. Invalid dbname, user or password?")
+    print(e)
