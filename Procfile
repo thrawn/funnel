@@ -1,1 +1,1 @@
-web: bin/qgtunnel python database.py
+worker: bin/qgtunnel python database.py
