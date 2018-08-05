@@ -4,7 +4,7 @@ import sys
 import pprint
  
 def main():
-	conn_string = "host='localhost' dbname='postgres' user='postgres' password='$DB_PASSWORD'"
+	conn_string = "host='localhost' dbname='postgres' user='postgres' password='DB_PASSWORD'"
 	# print the connection string we will use to connect
 	print "Connecting to database\n	->%s" % (conn_string)
  
