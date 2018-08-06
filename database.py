@@ -3,7 +3,7 @@ import os
 
 try:
     connect_str = "dbname='postgres' user='postgres' host='localhost' " + \
-                  "password=$DB_PASSWORD"
+                  "password=$DB_PASSWORD port=5432"
     # use our connection values to establish a connection
     conn = psycopg2.connect(connect_str)
     # create a psycopg2 cursor that can execute queries
