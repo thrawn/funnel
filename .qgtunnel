@@ -2,4 +2,4 @@
 accept = "127.0.0.1:5432"
 connect = "fun-146c256422ec5687.elb.us-west-2.amazonaws.com:5432"
 encrypted = false
-transparent = true
+transparent = false
