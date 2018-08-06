@@ -15,7 +15,7 @@ try:
     # create a new table with a single column called "name"
     #cursor.execute("""CREATE TABLE tutorials (name char(40));""")
     # run a SELECT statement - no data in there, but we can try it
-    cursor.execute("""SELECT 1+1 as test1""")
+    cursor.execute("SELECT 5+5 as test1")
     print(cursor.fetchone())
     #rows = cursor.fetchall()
     #print(rows)
