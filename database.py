@@ -3,7 +3,7 @@ import os
 
 try:
     #connect_str = "dbname='postgres' user='postgres' host='localhost' " + \
-                  "password=os.environ['DB_PASSWORD'] port=5432"
+    #              "password=os.environ['DB_PASSWORD'] port=5432"
     # use our connection values to establish a connection
 
     DATABASE_URL = os.environ['DATABASE_URL']
