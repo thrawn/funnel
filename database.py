@@ -16,8 +16,9 @@ try:
     #cursor.execute("""CREATE TABLE tutorials (name char(40));""")
     # run a SELECT statement - no data in there, but we can try it
     cursor.execute("""SELECT 1+1 as test1""")
-    rows = cursor.fetchall()
-    print(rows)
+    print(cursor.fetchone())
+    #rows = cursor.fetchall()
+    #print(rows)
 except Exception as e:
     print("Uh oh, can't connect. Invalid dbname, user or password?")
     print(e)
