@@ -2,10 +2,14 @@ import psycopg2
 import os
 
 try:
-    connect_str = "dbname='postgres' user='postgres' host='localhost' " + \
+    #connect_str = "dbname='postgres' user='postgres' host='localhost' " + \
                   "password=os.environ['DB_PASSWORD'] port=5432"
     # use our connection values to establish a connection
-    conn = psycopg2.connect(connect_str)
+
+    DATABASE_URL = os.environ['DATABASE_URL']
+
+    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+    #conn = psycopg2.connect(connect_str)
     # create a psycopg2 cursor that can execute queries
     cursor = conn.cursor()
     # create a new table with a single column called "name"
